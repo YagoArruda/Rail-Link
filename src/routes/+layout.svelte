@@ -1,84 +1,42 @@
 <script lang="ts">
-  import './layout.css';
-  import {
-    Building2,
-    ClipboardList,
-    Package,
-    PieChart,
-    Users,
-    Wallet
-  } from '@lucide/svelte';
-  import { page } from '$app/stores';
+  import "./layout.css";
+  import { Hexagon } from "@lucide/svelte";
+  import { page } from "$app/stores";
 
   let { data, children } = $props();
 
   const menuItems = [
     {
-      label: 'Produto',
-      icon: Package,
-      href: '/produto'
+      label: "Dashboard",
+      icon: Hexagon,
+      href: "/dashboard",
     },
     {
-      label: 'Fornecedores',
-      icon: Users,
-      href: '/fornecedores'
+      label: "Personagens",
+      icon: Hexagon,
+      href: "/personagens",
     },
     {
-      label: 'Ordens de Compra',
-      icon: ClipboardList,
-      href: '/ordemcompra'
+      label: "Artefatos",
+      icon: Hexagon,
+      href: "/artefatos",
     },
     {
-      label: 'Fluxo de Caixa',
-      icon: Wallet,
-      href: '/fluxocaixa'
+      label: "Estruturas",
+      icon: Hexagon,
+      href: "/estruturas",
     },
-    {
-      label: 'Relatórios',
-      icon: PieChart,
-      href: '/relatorios'
-    }
   ];
-
-  const pageTitles: Record<string, string> = {
-    '/': 'SIGE ERP',
-    '/fornecedores': 'Fornecedores',
-    '/charts': 'Relatórios'
-  };
-
-  function currentTitle(pathname: string) {
-    return pageTitles[pathname] ?? 'SIGE ERP';
-  }
 </script>
 
-<!-- {#if shellRoutes.has($page.url.pathname)} -->
- {#if !data.hideShell}
+{#if !data.hideShell}
   <div class="layout">
-  
     <header class="topbar">
-      <h1>{currentTitle($page.url.pathname)}</h1>
-
       <div class="topbar-cut"></div>
-
-      <div class="user-area">
-        <div class="avatar">
-          {data.dados.player.nickname[0].toUpperCase() || "U"}
-        </div>
-
-        <span>{data.dados.player.nickname || "Usuário"}</span>
-      </div>
     </header>
 
     <div class="workspace">
       <aside class="sidebar">
-        <div class="company-section">
-          <div class="company-avatar">
-            <Building2 size={18} />
-          </div>
-
-          <span>Andar 1001</span>
-        </div>
-
         <nav class="side-menu" aria-label="Menu principal">
           {#each menuItems as item}
             {@const Icon = item.icon}
@@ -102,23 +60,27 @@
       </main>
     </div>
   </div>
-      {:else}
+{:else}
   <div class="layout">
-  
     <header class="topbar">
-
       <div class="topbar-cut"></div>
-
     </header>
 
     {@render children?.()}
   </div>
 {/if}
-<!-- {:else}
-  {@render children?.()}
-{/if} -->
 
 <style>
+  body {
+    margin: 0;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: #f5f6fa;
+    font-family: Inter, sans-serif;
+  }
+
   .layout {
     min-height: 100vh;
     background: #f7f9fc;
@@ -138,13 +100,23 @@
     border-bottom: 3px solid #00b4b6;
   }
 
-  .topbar h1 {
+  .layout {
+    min-height: 100vh;
+    background: #f7f9fc;
+    color: #172033;
+    font-family: Inter, Arial, sans-serif;
+  }
+
+  .topbar {
     position: relative;
-    z-index: 2;
-    margin: 0;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 800;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    overflow: hidden;
+    background: linear-gradient(90deg, #14222c 0%, #0a1720 58%, #00a8a6 100%);
+    border-bottom: 3px solid #00b4b6;
   }
 
   .topbar-cut {
@@ -154,31 +126,6 @@
     height: 180px;
     background: rgba(0, 180, 182, 0.36);
     transform: skewX(-42deg);
-  }
-
-  .user-area {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    color: white;
-    font-size: 0.95rem;
-    font-weight: 600;
-  }
-
-  .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #e6eef5;
-    color: #14222c;
-    font-weight: 800;
-    border: 3px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
   }
 
   .workspace {
@@ -193,30 +140,6 @@
     background: linear-gradient(180deg, #172833 0%, #0c1b24 100%);
     color: white;
     border-right: 4px solid #00b4b6;
-  }
-
-  .company-section {
-    height: 66px;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0 1.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.92);
-    font-size: 0.95rem;
-  }
-
-  .company-avatar {
-    width: 34px;
-    height: 34px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.75);
-    background: rgba(0, 180, 182, 0.24);
-    flex-shrink: 0;
   }
 
   .side-menu {
@@ -235,7 +158,9 @@
     color: rgba(255, 255, 255, 0.86);
     font-size: 0.9rem;
     text-decoration: none;
-    transition: background 0.2s, color 0.2s;
+    transition:
+      background 0.2s,
+      color 0.2s;
   }
 
   .side-menu-item:hover {
@@ -264,10 +189,6 @@
       border-right: none;
       border-bottom: 4px solid #00b4b6;
       overflow: hidden;
-    }
-
-    .company-section {
-      height: 58px;
     }
 
     .side-menu {
@@ -302,10 +223,6 @@
     .topbar-cut {
       right: -120px;
       top: -30px;
-    }
-
-    .user-area {
-      align-self: flex-end;
     }
   }
 </style>

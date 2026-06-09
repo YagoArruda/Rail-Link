@@ -1,4 +1,4 @@
-import { fail, redirect } from "@sveltejs/kit";
+import { fail, redirect } from '@sveltejs/kit';
 
 export async function load({ cookies, url }) {
 	const cookie = cookies.get("session");
@@ -16,15 +16,21 @@ export async function load({ cookies, url }) {
 	if (url.pathname !== "/" && !session?.uid) {
 		throw redirect(303, "/");
 	}
+	
+	//const sid = session?.uid ?? 0;
 
-	/*const resposta = await fetch(
+	/*if (url.pathname !== "/t2") {
+		throw redirect(303, "/t2");
+	}*/
+
+	const resposta = await fetch(
 		`https://api.mihomo.me/sr_info_parsed/${session?.uid ?? 0}?lang=en`
-	);*/
+	);
 
-	//const dados = await resposta.json();
+	const dados = await resposta.json();
 
 	return {
-		//dados,
+		dados,
 		hideShell: session?.uid == null,
 	};
 }
