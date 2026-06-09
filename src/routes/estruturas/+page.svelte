@@ -7,3 +7,7 @@
 </svelte:head>
 
 <h1>Estruturas</h1>
+
+<style>
+
+</style>

@@ -71,20 +71,17 @@
 {/if}
 
 <style>
-  body {
-    margin: 0;
-  }
-
   :global(body) {
     margin: 0;
-    background: #f5f6fa;
+    background: #1b1b1f;
     font-family: Inter, sans-serif;
+    color: rgba(255, 255, 255, 0.86);
   }
 
   .layout {
     min-height: 100vh;
-    background: #f7f9fc;
-    color: #172033;
+    /*background: #f7f9fc;
+    color: #172033;*/
     font-family: Inter, Arial, sans-serif;
   }
 
@@ -96,50 +93,35 @@
     justify-content: space-between;
     padding: 0 2rem;
     overflow: hidden;
-    background: linear-gradient(90deg, #14222c 0%, #0a1720 58%, #00a8a6 100%);
-    border-bottom: 3px solid #00b4b6;
+    background: linear-gradient(90deg, #161618 0%, #1b1b1f 58%, #f82c36 100%);
+    /*border-bottom: 3px solid #00b4b6; trocar cor*/
+    border-bottom: 3px solid #f82c36;
   }
 
-  .layout {
-    min-height: 100vh;
-    background: #f7f9fc;
-    color: #172033;
-    font-family: Inter, Arial, sans-serif;
-  }
-
-  .topbar {
-    position: relative;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    overflow: hidden;
-    background: linear-gradient(90deg, #14222c 0%, #0a1720 58%, #00a8a6 100%);
-    border-bottom: 3px solid #00b4b6;
-  }
-
+  /*possivel remover depois*/
   .topbar-cut {
     position: absolute;
     right: 18%;
     width: 360px;
     height: 180px;
-    background: rgba(0, 180, 182, 0.36);
+    /*background: #f82c36;*/
     transform: skewX(-42deg);
   }
 
   .workspace {
     display: grid;
-    grid-template-columns: 190px minmax(0, 1fr);
+    /*grid-template-columns: 190px minmax(0, 1fr);*/
+    grid-template-columns: 160px minmax(0, 1fr);
     min-height: calc(100vh - 72px);
     min-width: 0;
   }
 
   .sidebar {
     min-width: 0;
-    background: linear-gradient(180deg, #172833 0%, #0c1b24 100%);
+    background: #161618;
+    /*background: linear-gradient(180deg, #172833 0%, #0c1b24 100%);
     color: white;
-    border-right: 4px solid #00b4b6;
+    border-right: 4px solid #00b4b6;*/
   }
 
   .side-menu {
@@ -156,7 +138,8 @@
     gap: 0.8rem;
     padding: 0 1.55rem;
     color: rgba(255, 255, 255, 0.86);
-    font-size: 0.9rem;
+    /*font-size: 0.9rem;*/
+    font-size: 0.8rem;
     text-decoration: none;
     transition:
       background 0.2s,
@@ -168,7 +151,7 @@
   }
 
   .side-menu-item.active {
-    color: #00d2d3;
+    color: #f82c36;
   }
 
   .content,

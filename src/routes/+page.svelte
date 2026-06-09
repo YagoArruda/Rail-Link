@@ -51,12 +51,6 @@
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
   }
 
-  :global(body) {
-    margin: 0;
-    background: #f5f6fa;
-    font-family: Inter, sans-serif;
-  }
-
   .layout {
     display: flex;
     min-height: 100vh;
@@ -150,7 +144,7 @@
     margin-top: 0.5rem;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(90deg, #00aaa8, #008f8d);
+    background: linear-gradient(90deg, #161618, #1b1b1f);
     color: white;
     font: inherit;
     font-size: 0.95rem;
