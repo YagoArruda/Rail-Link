@@ -1,5 +1,1 @@
-npm install
-
-npm run dev -- watch
-
-npm run build
+php -S localhost:8000
