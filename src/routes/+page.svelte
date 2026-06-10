@@ -135,8 +135,8 @@
   }
 
   .login-field input:focus {
-    border-color: #00aaa8;
-    box-shadow: 0 0 0 3px rgba(0, 180, 182, 0.12);
+    border-color: #b91c1c;
+    box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
   }
 
   .login-button {
@@ -153,7 +153,7 @@
     transition:
       transform 0.15s,
       opacity 0.2s;
-    box-shadow: 0 8px 16px rgba(0, 143, 141, 0.22);
+    box-shadow: 0 8px 16px rgba(54, 7, 7, 0.22);
   }
 
   .login-button:hover {

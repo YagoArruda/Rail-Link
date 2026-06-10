@@ -1,6 +1,6 @@
 <script lang="ts">
   import "./layout.css";
-  import { Hexagon } from "@lucide/svelte";
+  import { Hexagon, VenetianMask, Astroid, Landmark } from "@lucide/svelte";
   import { page } from "$app/stores";
 
   let { data, children } = $props();
@@ -13,17 +13,17 @@
     },
     {
       label: "Personagens",
-      icon: Hexagon,
+      icon: Astroid,
       href: "/personagens",
     },
     {
       label: "Artefatos",
-      icon: Hexagon,
+      icon: VenetianMask,
       href: "/artefatos",
     },
     {
       label: "Estruturas",
-      icon: Hexagon,
+      icon: Landmark,
       href: "/estruturas",
     },
   ];
@@ -170,7 +170,7 @@
 
     .sidebar {
       border-right: none;
-      border-bottom: 4px solid #00b4b6;
+      /*border-bottom: 4px solid #00b4b6;*/
       overflow: hidden;
     }
 

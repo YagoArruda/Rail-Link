@@ -23,10 +23,10 @@
 <style>
 /* From Uiverse.io by mobinkakei */
 #wifi-loader {
-  --background: #62abff;
-  --front-color: #4f29f0;
-  --back-color: #c3c8de;
-  --text-color: #414856;
+  --background: #161618;/*#62abff*/
+  --front-color: #b91c1c;
+  --back-color: #161618;/*#c3c8de*/
+  --text-color: #161618;/*#414856*/
   width: 64px;
   height: 64px;
   border-radius: 50px;
