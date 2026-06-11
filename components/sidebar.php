@@ -26,8 +26,6 @@ $menuItems = [
 ];
 ?>
 
-<div class="workspace">
-
     <aside class="sidebar">
         <nav class="side-menu">
 
@@ -48,9 +46,3 @@ $menuItems = [
 
         </nav>
     </aside>
-
-    <main class="content">
-        <!-- conteúdo -->
-    </main>
-
-</div>

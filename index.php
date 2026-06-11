@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     <?php endif; ?>
 
-                    <form method="POST" class="login-form">
+                    <form method="POST" class="login-form" id="loginForm">
                         <label class="login-field" for="uid">
                             <span>UID</span>
                             <input
@@ -82,13 +82,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 value="<?= htmlspecialchars($uid ?? '') ?>" />
                         </label>
 
-                        <button class="login-button" type="submit"> Entrar </button>
+                        <button id="loginButton" class="login-button" type="submit"> Entrar </button>
                     </form>
                 </div>
 
             </section>
         </main>
     </div>
+
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function() {
+
+            const uid = document.getElementById('uid');
+
+            if (!uid.value.trim()) {
+                return;
+            }
+
+            const button = document.getElementById('loginButton');
+
+            uid.readOnly = true;
+
+            button.disabled = true;
+
+            button.innerHTML = `
+        <span class="spinner"></span>
+        <span style="margin-left:8px">Entrando...</span>
+    `;
+        });
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,14 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION['uid'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$uid = $_SESSION['uid'];
+
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +28,21 @@
 <body>
     <?php include 'components/header.php'; ?>
 
-    <?php include 'components/sidebar.php'; ?>
+    <div class="workspace">
 
-    <div class="layout">
+        <?php include 'components/sidebar.php'; ?>
+
+        <main class="content">
+            <div class="loader" id="loader">
+                <?php include 'components/loader.php'; ?>
+            </div>
+        </main>
 
     </div>
+
+    <script>
+
+    </script>
 
     <script>
         lucide.createIcons();
