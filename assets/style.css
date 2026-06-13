@@ -331,6 +331,27 @@ body {
     border-radius: 6px;
 }
 
+.character-image-container-in {
+    position: relative;
+}
+
+.p-char-card{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    margin: 0;
+    padding: 6px 10px;
+
+    color: white;
+    font-weight: bold;
+
+    background: rgba(0,0,0,.5);
+    border-radius: 6px;
+
+    z-index: 10;
+}
+
 
 .character-card {
     background: #25252b;
@@ -447,3 +468,30 @@ body {
     position: relative;
     z-index: 2;
 }
+
+.character-preview-image {
+    /*max-height: 25vh;
+    width: calc(35vh - 1rem);*/
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+.character-preview-card {
+    background: #25252b;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+
+    border: 1px solid transparent;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+
+    position: relative;
+    width: 50%;
+}
+
+

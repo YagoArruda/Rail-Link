@@ -30,19 +30,30 @@ $uid = $_SESSION['uid'];
 
     <div class="workspace">
 
+
         <?php include 'components/sidebar.php'; ?>
 
         <main class="content">
             <div class="loader" id="loader">
                 <?php include 'components/loader.php'; ?>
             </div>
-        </main>
 
+            <div id="dashboard-content">
+
+                <h1>Lista de Personagens</h1>
+
+                <div id="characters" class="characters"></div>
+            </div>
+
+        </main>
     </div>
 
     <script>
-
+        window.userName = <?= json_encode($_SESSION['userName']) ?>;
+        //window.uid = <?= json_encode($_SESSION['uid']) ?>;
     </script>
+
+    <script type="module" src="assets/js/personagens.js"></script>
 
     <script>
         lucide.createIcons();

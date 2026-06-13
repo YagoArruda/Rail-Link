@@ -22,7 +22,6 @@ $uid = $_SESSION['uid'];
     <link rel="stylesheet" href="assets/style.css">
 
     <script src="https://unpkg.com/lucide@latest"></script>
-
 </head>
 
 <body>
@@ -62,59 +61,7 @@ $uid = $_SESSION['uid'];
         </main>
     </div>
 
-    <script>
-        document.getElementById('loader').style.display = 'flex';
-        document.getElementById('dashboard-content').style.display = 'none';
-
-        async function carregarDados() {
-
-            const resposta = await fetch('api/player.php');
-
-            const dados = await resposta.json();
-
-            document.getElementById('nickname').textContent = dados.player.nickname;
-            document.getElementById('signature').textContent = dados.player.signature;
-            document.getElementById('level').textContent = dados.player.level;
-            //document.getElementById('uid').textContent = dados.player.uid;
-            document.getElementById('avatar').src = "https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/" + dados.player.avatar.icon;
-
-            const charactersDiv = document.getElementById('characters');
-            charactersDiv.innerHTML = '';
-
-            dados.characters.forEach((personagem, index) => {
-
-                const div = document.createElement('div');
-                //div.className = "character-card";
-
-                if (personagem.rarity === 5) {
-                    div.className = "character-card rarity-5";
-                } else if (personagem.rarity === 4) {
-                    div.className = "character-card rarity-4";
-                } else {
-                    div.className = "character-card rarity-other";
-                }
-
-                const p = document.createElement('p');
-                p.textContent = `${index + 1} - ${personagem.name} - Lv ${personagem.level}`;
-                //charactersDiv.appendChild(p);
-                div.appendChild(p);
-
-                const img = document.createElement('img');
-                img.src = "https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/" + personagem.icon;
-                //charactersDiv.appendChild(img);
-                img.className = "character-image";
-                div.appendChild(img);
-
-                charactersDiv.appendChild(div);
-
-            });
-
-            document.getElementById('loader').style.display = 'none';
-            document.getElementById('dashboard-content').style.display = 'block';
-        }
-
-        carregarDados();
-    </script>
+    <script type="module" src="assets/js/dashboard.js"></script>
 
     <script>
         lucide.createIcons();

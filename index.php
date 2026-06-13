@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
 
             $_SESSION['uid'] = $uid;
-            $_SESSION['userName'] = "Usuario $uid";
+            $_SESSION['userName'] = $dados['player']['nickname'];
 
             header('Location: dashboard.php');
             exit;
