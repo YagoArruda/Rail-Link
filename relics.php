@@ -52,7 +52,7 @@ $uid = $_SESSION['uid'];
         window.userName = <?= json_encode($_SESSION['userName']) ?>;
     </script>
 
-    <script type="module" src="assets/js/artefatos.js"></script>
+    <script type="module" src="assets/js/relics.js"></script>
 
     <script>
         lucide.createIcons();

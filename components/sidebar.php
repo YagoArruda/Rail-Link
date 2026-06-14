@@ -10,17 +10,17 @@ $menuItems = [
     ],
     [
         'label' => 'Personagens',
-        'href' => 'personagens.php',
+        'href' => 'characters.php',
         'icon' => 'astroid'
     ],
     [
         'label' => 'Artefatos',
-        'href' => 'artefatos.php',
+        'href' => 'relics.php',
         'icon' => 'venetian-mask'
     ],
     [
         'label' => 'Estruturas',
-        'href' => 'estruturas.php',
+        'href' => 'structures.php',
         'icon' => 'landmark'
     ]
 ];
