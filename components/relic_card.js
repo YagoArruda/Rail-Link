@@ -1,25 +1,25 @@
-export function criarCharacterCard(personagem, index, userName) {
+export function criarRelicCard(cardInfo, index, userName) {
 
     const div = document.createElement('div');
 
+    let name = "";
+    name = cardInfo.name;
+    name = name.slice(0, 6) + (name.length > 6 ? '...' : '');
+
     div.className =
-        personagem.rarity === 5 ? 'character-card rarity-5' :
-        personagem.rarity === 4 ? 'character-card rarity-4' :
-        'character-card rarity-other';
+        cardInfo.rarity === 5 ? 'relic-card rarity-5' :
+            cardInfo.rarity === 4 ? 'relic-card rarity-4' :
+                'relic-card rarity-other';
 
     div.innerHTML = `
         <div class="character-image-container">
             <img
                 class="character-image"
-                src="https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${personagem.icon}"
+                src="https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${cardInfo.icon}"
             >
 
             <p class="p-char-card">
-                ${index + 1} - ${
-                    personagem.name === "{NICKNAME}"
-                        ? userName
-                        : personagem.name
-                }
+                ${name}
             </p>
         </div>
     `;

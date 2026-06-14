@@ -32,7 +32,7 @@ $menuItems = [
             <?php foreach ($menuItems as $item): ?>
 
                 <a
-                    class="side-menu-item <?= $currentPage === $item['href'] ? 'active' : '' ?>"
+                    class="side-menu-item <?= activeMenu($item['href']) ?>"
                     href="<?= $item['href'] ?>"
                 >
 
@@ -46,3 +46,16 @@ $menuItems = [
 
         </nav>
     </aside>
+
+<?php
+
+function activeMenu(string $href): string
+{
+    $currentPage = basename($_SERVER['PHP_SELF']);
+
+    if($currentPage === 'character.php' && $href === 'personagens.php') {
+        return 'active';
+    }
+
+    return $currentPage === $href ? 'active' : '';
+}

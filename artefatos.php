@@ -42,7 +42,7 @@ $uid = $_SESSION['uid'];
 
                 <h1>Lista de Sets de Relíquias</h1>
 
-                <div id="characters" class="characters"></div>
+                <div id="cards" class="relics"></div>
             </div>
 
         </main>

@@ -20,7 +20,7 @@ try {
 
     $sql = "
 SELECT *
-FROM relic_sets
+FROM rail_relic_sets
 ORDER BY relic_set_id DESC
 ";
 

@@ -2,8 +2,17 @@ export function criarCharacterCard(personagem, index, userName) {
 
     const link = document.createElement('a');
 
-    link.href = `character.php?id=${personagem.character_id}`;
+    link.href = `character.php?id=${personagem.character_id || personagem.id}`;
     link.className = 'character-link';
+
+    let name = "";
+    if (personagem.name === "{NICKNAME}") {
+        name = userName;
+    }
+    else {
+        name = personagem.name;
+    }
+    name = name.slice(0, 19) + (name.length > 19 ? '...' : '');
 
     link.innerHTML = `
         <div class="character-card ${
@@ -18,11 +27,7 @@ export function criarCharacterCard(personagem, index, userName) {
                 >
 
                 <p class="p-char-card">
-                    ${index + 1} - ${
-                        personagem.name === "{NICKNAME}"
-                            ? userName
-                            : personagem.name
-                    }
+                    ${index + 1} - ${name}
                 </p>
             </div>
         </div>
