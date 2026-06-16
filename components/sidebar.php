@@ -53,7 +53,7 @@ function activeMenu(string $href): string
 {
     $currentPage = basename($_SERVER['PHP_SELF']);
 
-    if($currentPage === 'character.php' && $href === 'personagens.php') {
+    if($currentPage === 'character.php' && $href === 'characters.php') {
         return 'active';
     }
 

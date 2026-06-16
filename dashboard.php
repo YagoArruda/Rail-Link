@@ -58,6 +58,10 @@ $uid = $_SESSION['uid'];
                 <div id="characters" class="characters"></div>
             </div>
 
+            <div id="farm-intentions">
+
+            </div>
+
         </main>
     </div>
 

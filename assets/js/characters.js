@@ -20,7 +20,8 @@ async function carregarDados() {
             criarCharacterCard(
                 personagem,
                 index,
-                window.userName
+                window.userName,
+                false
             )
         );
 

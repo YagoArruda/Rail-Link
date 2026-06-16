@@ -1,8 +1,8 @@
-export function criarCharacterCard(personagem, index, userName) {
+export function criarCharacterCard(personagem, index, userName, ppt) {
 
     const link = document.createElement('a');
 
-    link.href = `character.php?id=${personagem.character_id || personagem.id}`;
+    link.href = `character.php?id=${personagem.character_id || personagem.id}&ppt=${ppt}`;
     link.className = 'character-link';
 
     let name = "";

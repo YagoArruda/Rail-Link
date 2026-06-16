@@ -1,10 +1,12 @@
 import { criarCharacterCard } from '../../components/character_card.js';
+import { criarCharacterBar } from '../../components/character_bar.js';
 
 document.getElementById('loader').style.display = 'flex';
 document.getElementById('dashboard-content').style.display = 'none';
 
 async function carregarDados() {
 
+    //cards-personagens
     const resposta = await fetch('api/player.php');
     const dados = await resposta.json();
 
@@ -23,13 +25,27 @@ async function carregarDados() {
             criarCharacterCard(
                 personagem,
                 index,
-                window.userName
+                window.userName,
+                true
             )
         );
 
     });
     document.getElementById('loader').style.display = 'none';
     document.getElementById('dashboard-content').style.display = 'block';
+
+    //farm-intentions
+    const charactersBars = document.getElementById('farm-intentions');
+    charactersBars.appendChild(
+        criarCharacterBar(
+            dados.characters[0],
+            0,
+            window.userName,
+            true
+        )
+    );
+
+    lucide.createIcons();
 }
 
 carregarDados();

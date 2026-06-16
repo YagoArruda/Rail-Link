@@ -523,4 +523,45 @@ body {
     position: relative;
 }
 
+.mt-10{
+    margin-top: 10vh;
+}
 
+.round-character-image{
+    border-radius: 50%;
+    height: 20vh;
+}
+
+.character-bar-container{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: #64748b;*/
+    background-color: #25252b;
+    gap: 3vh;
+}
+
+.character-bar{
+    width: 150vh;
+    height: 20vh;
+    /*background-color: #b91c1c;*/
+}
+
+.p-char-bar{
+    font-size: 4vh;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3vh;
+}
+
+.relics-select{
+    display: flex;
+    align-items: center;
+    gap: 3vh;
+    padding: 15px;
+}
